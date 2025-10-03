@@ -1,24 +1,376 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  margin: 0;
-  padding: 0;
+/*A estrutura do css é composta: pela identificação do elemento seguido de chaves, e por fim dentro das chaves você escolhe o atributo que deseja modificar seguido do parâmetro. Ex: 
+p{font-size:16px;
+  color: red;}
+Sempre eu preciso terminar os comandos com ;*/
+/*Medidas Absolutas - ou seja fixas
+    px pixels
+    cm centímetros
+    mm milímetros
+Medidas relativas - ou seja que se ajustam
+  rem - se ajusta de acordo com o tamanho da fonte html
+  %   - relativo ao tamanho do elemento pai / tela
+  */
+
+.texto {
+  max-width: 60%;            /* limita largura do texto */
 }
 
-header {
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+.banner {
+    width: 100%;
+    height: auto; /* ocupa toda a altura da tela */
+    background-image: url('img/perfil.svg');
+    background-size: cover;  /* cobre toda a largura */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*Aplicou os estilos básicos ao corpo da página*/
+body{
+    background: #0B0731;
+    font-family: 'Poppins', sans-serif;/*Define a fonte padrão*/
+    font-weight: 400; /* peso regular, usado em parágrafos */
+    font-size: 16px;
+    color: #ffffff;/*Define a cor do texto*/
+    line-height: 1.6;/*Define o espaçamento entre as linhas*/
+    text-align: justify;/*Centraliza o texto*/
+    margin: 0;
+    padding: 0;
 }
 
 section {
-  padding: 20px;
-  margin: 10px;
-  background-color: white;
+  padding: 5px 200px; /* ou o valor que preferir */
 }
 
-h1, h2 {
-  margin: 0;
+/*Estilos do título principal da página*/
+h1{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-weight: bold; /* dá mais presença */
+    text-align: justify;/*Centraliza o texto*/
+    color: #C6A978;/*Aplica cor laranja*/
+    font-size: 3rem;/*Altera o tamanho*/
+    margin-bottom: 3px;/*Espaçamento externo abaixo do título*/
+}
+/*Estilos para os subtítulos h3 e h4*/
+
+
+h5{
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: justify;/*Centraliza o texto*/
+    color: #ffffff;/*Aplica cor laranja*/
+    margin-bottom: 3px 3px;/*Espaçamento externo abaixo do título*/
+}
+
+h2,h3,h4{
+    color: #C6A978;
+    margin-top: 20px;
+}
+p{
+    font-size: 18px;
+}
+/*Estilizando os links*/
+a{
+    color: #ffffff;/*Cor da letra/fonte*/
+    text-decoration: none;/*Remove o traçado do link*/
+}
+/*Evento hover nos links*/
+a:hover{
+    text-decoration: underline;/*Adiciona um traço abaixo do link quando o mouse estiver sobre ele*/
+}
+/*Responsividade*/
+/*Telas pequenas*/
+@media(max-width:768px){
+    .card{
+        width: 90%;
+        margin: 0px auto;
+    }
+}
+
+/* Define o layout do menu como horizontal e centralizado */
+
+.menu-hover {
+    display: flex;
+    list-style: none;
+    background-color: #C6A978;
+    padding: 0px 0;
+    justify-content: center;
+
+    /* Bloco fixo no topo */
+    position: fixed;  /* Fixa o menu na tela */
+    top: 0;           /* Topo da tela */
+    left: 0;          /* Colado na lateral esquerda */
+    width: 100%;      /* Ocupa toda a largura da tela */
+    z-index: 100;    /* Mantém o menu acima de outros elementos */
+}
+
+/* Estiliza os links do menu */
+.menu-hover a {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* deixa os links mais destacados */
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold; /* dá mais presença */
+    text-decoration: none;    /* Remove o sublinhado padrão dos links */
+    color: #0a062c;              /* Define a cor do texto como cinza escuro */
+    position: relative;       /* Necessário para posicionar o pseudo-elemento ::after em relação ao link */
+    padding: 20px;             /* Espaço interno ao redor do texto do link */
+    transition: color 0.3s ease; /* Transição suave na mudança de cor (caso seja adicionada futuramente) */
+}
+
+/* Cor ao passar o mouse */
+.menu-hover a:hover {
+    color: #ffffff;  /* Exemplo: muda para branco */
+}
+
+.contact-icons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    filter: brightness(0) invert(1); /* deixa o ícone branco */
+  }
+
+  .contact-icons li a {
+    display: inline-block;
+  }
+
+  .icon {
+    width: 50px;
+    vertical-align: center;
+    transition: transform 0.3s, filter 0.3s;
+  }
+
+  .icon:hover {
+    transform: scale(1.2);
+    filter: brightness(0) invert(1) drop-shadow(0 0 5px #f5c542);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container para alinhar cards lado a lado */
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* espaço entre os cards */
+  justify-content: center;
+}
+
+/* Card de cada formação */
+.education-card {
+  background: #e4d6bd;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1 1 300px; /* responsivo: largura mínima 300px */
+  max-width: 350px; /* largura máxima */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.education-card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.education-card p {
+  margin: 8px 0;
+  line-height: 1.5;
+  color: #444;
+}
+
+/* Logo da universidade */
+.education-logo {
+  width: 60px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: block;
+}
+
+.education-card strong {
+  color: #0056b3;
+}
+.education-card em {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+
+
+:root {
+  --bg:#0B0731;
+  --line:#ececf2;
+  --card:#231f39;
+  --text:#f5f6fa;
+  --muted:#c8c9d4;
+  --accent:#9aa0ff;
+}
+
+#background {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, Arial, sans-serif;
+  padding: 64px 0 96px; /* apenas espaçamento vertical */
+}
+
+#background .timeline {
+  max-width: 1100px;   /* largura padrão centralizada */
+  margin: 0 auto;
+  padding: 0 20px;     /* respiro lateral */
+  position: relative;
+}
+
+/* Linha central */
+.timeline::before {
+  content:"";
+  position:absolute;
+  left:50%;
+  top:0;
+  transform:translateX(-50%);
+  width:4px;
+  height:100%;
+  background:var(--line);
+  border-radius:2px;
+  opacity:.9;
+}
+
+/* Cards */
+.timeline-item {
+  position:relative;
+  width:50%;
+  padding:26px 32px;
+  box-sizing:border-box;
+}
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+
+.timeline-content {
+  background:var(--card);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:14px;
+  padding:26px 26px 22px;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.timeline-content h3 {
+  margin:0 0 6px;
+  font-size:1.2rem;
+}
+.timeline-content .company {
+  margin:0 0 12px;
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+/* descrição em parágrafos */
+.desc {
+  display:grid;
+  gap:10px;
+  margin-top:8px;
+}
+.timeline-content p {
+  margin:0;
+  line-height:1.55;
+  color:#e7e7f0;
+}
+
+/* skills chips */
+.skills {
+  margin-top:14px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.skills span {
+  font-size:.85rem;
+  color:#0e0e12;
+  background:#e9ecff;
+  padding:6px 10px;
+  border-radius:999px;
+}
+
+/* marcador (logo + data) */
+.timeline-marker {
+  position:absolute;
+  top:26px;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.timeline-marker::before {
+  content:"";
+  width:22px;
+  height:22px;
+  background:var(--bg);
+  border:4px solid var(--line);
+  border-radius:50%;
+  box-shadow:0 0 0 6px var(--bg);
+}
+.timeline-marker img {
+  width:52px;
+  height:52px;
+  object-fit:contain;
+  background:#fff;
+  border-radius:50%;
+  padding:8px;
+  border:1px solid rgba(0,0,0,.1);
+  box-shadow:0 4px 10px rgba(0,0,0,.35);
+}
+.timeline-marker .date {
+  color:var(--muted);
+  font-size:.9rem;
+  white-space:nowrap;
+}
+
+/* setinhas nos cards */
+.timeline-item.left .timeline-content {
+  clip-path:polygon(0 0,100% 0,100% 100%,6% 100%,6% 55%,0 50%,6% 45%,6% 0);
+}
+.timeline-item.right .timeline-content {
+  clip-path:polygon(0 0,94% 0,94% 45%,100% 50%,94% 55%,94% 100%,0 100%,0 0);
+}
+
+/* responsivo */
+@media (max-width:780px) {
+  .timeline::before {
+    left:28px;
+    transform:none;
+  }
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    left:0;
+    width:100%;
+    padding-left:72px;
+    padding-right:16px;
+  }
+  .timeline-marker {
+    left:28px;
+    transform:translate(-50%,-50%);
+  }
+  .timeline-item .timeline-content {
+    clip-path:none;
+  }
 }
