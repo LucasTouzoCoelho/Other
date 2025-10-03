@@ -1,22 +1,268 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Pessoal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Lucas Coelho</title>
+    <!--Conectando o CSS ao HTML. Permitindo que o navegador interprete e aplique as regras de formatação definidas no css aos elementos HTML.-->
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
+</head>
+<body>
+    <!--Criando o menu interativo-->
+    <nav><!--Organiza todos os elementos do menu, centralizando em um só lugar-->
+        <ul class="menu-hover">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutMe">About Me</a></li>
+            <li><a href="#education">Skills</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contactInfo">Contact</a></li>
+        </ul>
+    </nav>
     <header>
-      <h1>Bem-vindo ao Meu Site Pessoal!</h1>
+        <img class="banner" src="img/perfil.svg" alt="Banner">
     </header>
-    <section id="sobre">
-      <h2>Sobre Mim</h2>
-      <p>Eu sou um desenvolvedor apaixonado por programação.</p>
+    <!--Sobre Mim-->
+    <section id="aboutMe">
+        <h2>About me</h2>
+
+        <p>Hi there, I'm Lucas!</p>
+        <p>I’m a Data professional with 4 years in data teams and a background of 10 years applying data-driven insights in industrial processes, saving a lot of money througout this jorney. I’m a lifelong learner who believes that data-driven culture blended with Lean Manufacturing is a powerful combination to leverage business outcomes.</p>
+        <p>In the food industry, I used Statistics and Data Science techniques to reduce weight variation across 8 noodle lanes by 52% via ANOVA and cut contamination in the nesting line by 27% through root-cause analysis and collaboration with the maintenance team.</p>
+        <p>I contributed to a global corporate to build the official company source of truth, used to increase the performance of Machine Learning models and make data and KPIs more accessible to stakeholders.</p>
+        <p>With the analytics team, I conducted deep dive analysis that answered many business questions, applying Statistics, Data mining techniques, data visualization and Data Science methods to building smart solutions, ensuring the visibility to the commercial teams and show the right direction to the business thrive.</p>
+        <p>I am currently furthering my expertise in advanced Artificial Intelligence concepts and techniques through a specialization at UNICAMP, and actively applying these skills in personal projects. I have hands-on experience with Python, SQL, Pandas, NumPy and Scikit-learn.</p>
+        <hr>
     </section>
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Email: seuemail@exemplo.com</p>
+    <section id="education">
+        <h2>Education & Technical Skills</h2>
+    <div class="education-container">
+
+      <!-- Universidade Estadual de Campinas -->
+      <div class="education-card">
+        <img src="img/log-unicamp.png" alt="Logo Universidade Estadual de Campinas" class="education-logo">
+        <h3>Universidade Estadual de Campinas</h3>
+        <p><strong>Specialization, Data Science</strong></p>
+        <p><em>ago de 2025 - dez de 2026</em></p>
+        <p>
+          A specialization program focused on training professionals to transform data into strategic insights. 
+          The course covers statistics, Python and R programming, machine learning, artificial intelligence, 
+          data analysis, and visualization, combining theory with hands-on practice on real-world problems.
+        </p>
+        <p><strong>Competências:</strong> Python · SQL · Machine Learning · Statistics · Data Mining</p>
+      </div>
+
+      <!-- Universidade de São Paulo -->
+      <div class="education-card">
+        <img src="img/logo-usp.png" alt="Logo Universidade de São Paulo" class="education-logo">
+        <h3>Universidade de São Paulo</h3>
+        <p><strong>MBA, Data Science & Analytics</strong></p>
+        <p><em>out de 2021 - abr de 2023</em></p>
+        <p>
+          An MBA program designed to equip professionals with advanced skills in Data Science and Analytics. 
+          The curriculum combines data management, statistical modeling, machine learning, and business intelligence.
+        </p>
+        <p><strong>Competências:</strong> Time Series Analysis · Algorithms · Machine Learning · Deep Learning · Neural Networks</p>
+      </div>
+
+      <!-- Universidade Paulista -->
+      <div class="education-card">
+        <img src="img/logo-unip.png" alt="Logo Universidade Paulista" class="education-logo">
+        <h3>Universidade Paulista</h3>
+        <p><strong>Bachelor's degree, Electrical Engineering</strong></p>
+        <p><em>2011 - 2016</em></p>
+        <p>
+          A Bachelor’s degree in Electrical Engineering providing a strong foundation in mathematics, programming, 
+          and problem-solving. The program emphasizes analytical thinking, signal processing, and systems modeling.
+        </p>
+        <p><strong>Competências:</strong> Problem Solving · Mathematics · Engineering · Linear Algebra · Logic</p>
+      </div>
+
+    </div>
+    <br>
+    <hr>
     </section>
-  </body>
+    <section id="background">
+      <h2>Professional Background</h2>
+
+      <div class="timeline">
+        <!-- AB InBev -->
+        <article class="timeline-item left">
+          <div class="timeline-marker">
+            <img src="img/abinbev.png" alt="AB InBev">
+            <span class="date">Nov 2022 – Present · Remote · New York, NY, USA</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Analytics Engineer</h3>
+            <p class="company">AB InBev · Full-time</p>
+
+            <div class="desc">
+              <p>Optimized complex SQL queries, reducing report response time by up to <strong>40%</strong>.</p>
+              <p>Built the <strong>Gold</strong> data layer for a key product, improving data quality for decision-making and analytics governance.</p>
+              <p>Developed automated data pipelines and automated ETL in SQL/Python, cutting processing time for recurring reports.</p>
+              <p>Performed EDA with SQL, pandas, NumPy, and matplotlib to uncover patterns and improvement opportunities.</p>
+              <p>Created executive reports using data storytelling to support strategic decisions; supported NLP models for sentiment analysis.</p>
+              <p>Structured databases to feed automated reports; contributed to Data Lake ingestion from multiple formats and sources.</p>
+              <p>Designed and enhanced <strong>Power BI</strong> dashboards to track operational efficiency.</p>
+            </div>
+
+            <div class="skills">
+              <span>SQL</span><span>Python</span><span>ETL</span><span>pandas</span>
+              <span>NumPy</span><span>matplotlib</span><span>Power BI</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- UPS -->
+        <article class="timeline-item right">
+          <div class="timeline-marker">
+            <img src="img/ups.png" alt="UPS">
+            <span class="date">Apr 2022 – Nov 2022 · Remote · Cajamar, SP, Brazil</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Data Analyst</h3>
+            <p class="company">UPS · Full-time</p>
+
+            <div class="desc">
+              <p>Built automation pipelines to feed reports and schedule emails/reminders using Python and UiPath.</p>
+              <p>Designed and improved BI dashboards in <strong>Tableau</strong> and <strong>Power BI</strong> for reverse logistics performance.</p>
+              <p>Architected pipelines to extract ERP data and structure historical datasets for analytics.</p>
+              <p>Prepared and normalized raw datasets; implemented advanced validation rules to increase reliability.</p>
+              <p>Modeled data and documented standards for consistent reporting across teams.</p>
+              <p>Integrated multiple data sources into a unified model enabling cross-functional insights.</p>
+            </div>
+
+            <div class="skills">
+              <span>Python</span><span>Power BI</span><span>Tableau</span>
+              <span>UiPath</span><span>Data Modeling</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pastifício Selmi · Process Analyst -->
+        <article class="timeline-item left">
+          <div class="timeline-marker">
+            <img src="img/selmi.png" alt="Pastifício Selmi SA">
+            <span class="date">Jun 2013 – Apr 2022 · On-site · Sumaré, SP, Brazil</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Process Analyst</h3>
+            <p class="company">Pastifício Selmi SA</p>
+
+            <div class="desc">
+              <p>Investigated root causes of pasta contamination with Maintenance, reducing defects by <strong>27%</strong>.</p>
+              <p>Designed an automated seasoning-sachet dispenser, cutting operating costs by <strong>67%</strong> and eliminating recurring RSIs.</p>
+              <p>Applied <strong>SMED</strong> to reduce setup time by ~<strong>60%</strong>; standardized instant-noodle package weights with <strong>ANOVA</strong>.</p>
+              <p>Implemented statistical quality controls to monitor contamination and ensure consumer safety.</p>
+              <p>Measured and compared output of 8 parallel conveyor rows to optimize uniformity.</p>
+              <p>Redesigned line layout to reduce operator movement and setup delays; created a lifting platform for packaging rolls.</p>
+              <p>Standardized data collection and automated reporting, reducing errors and saving operational time.</p>
+            </div>
+
+            <div class="skills">
+              <span>Lean Six Sigma</span><span>Power BI</span><span>Statistics</span>
+              <span>SMED</span><span>ANOVA</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Pastifício Selmi · Process Associate -->
+        <article class="timeline-item right">
+          <div class="timeline-marker">
+            <img src="img/selmi.png" alt="Pastifício Selmi SA">
+            <span class="date">Mar 2011 – Jun 2013 · On-site · Sumaré, SP, Brazil</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Process Associate</h3>
+            <p class="company">Pastifício Selmi SA</p>
+
+            <div class="desc">
+              <p>Analyzed production and raw-material consumption; created process controls, reports, and procedures.</p>
+              <p>Supported the electrical maintenance area during internship activities.</p>
+            </div>
+
+            <div class="skills">
+              <span>Lean Thinking</span><span>Management Reporting</span><span>Standardization</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Andorinha Farma -->
+        <article class="timeline-item left">
+          <div class="timeline-marker">
+            <img src="img/andorinha.jpeg" alt="Andorinha Distribuidora Farma">
+            <span class="date">Jan 2010 – Mar 2011 · On-site · Valinhos, SP, Brazil</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Packer</h3>
+            <p class="company">Andorinha Distribuidora Farma · Full-time</p>
+
+            <div class="desc">
+              <p>Implemented inventory-tracking procedures to improve accuracy and reduce stock discrepancies.</p>
+              <p>Optimized warehouse layout to increase efficiency and reduce retrieval time.</p>
+              <p>Applied basic statistical analysis to identify movement trends; standardized receiving, storage, and dispatch.</p>
+              <p>Analyzed operations data to generate insights for cost reduction and process optimization.</p>
+            </div>
+
+            <div class="skills">
+              <span>Multitasking</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      <hr>
+    </section>
+    <!--Galeria-->
+    <section id="projects">
+  <h2>Notable Projects</h2>
+  <p>
+    <a href="https://github.com/LucasTouzoCoelho/EDA-Covid-19" target="_blank">
+      Exploratory Analysis using COVID-19 Sao Paulo's Vaccination Dataset
+    </a>
+  </p>
+  <p>
+    <a href="https://github.com/LucasTouzoCoelho/churn-model-deploy" target="_blank">
+      Deploying a Machine Learning model to predict Churn in a Telecommunications company - Project Development
+    </a>
+  </p>
+  <p>
+    <a href="https://churn-model-deploy-fyzrdgqh9kgybkkquies3h.streamlit.app/" target="_blank">
+      Deploying a Machine Learning model to predict Churn in a Telecommunications company - Project App
+    </a>
+  </p>
+  <hr>
+    </section>
+    <!--Informações de Contato-->
+    <section id="contactInfo">
+        <h2>Contact Info</h2>
+        <ul class="contact-icons">
+            <li>
+            <a href="https://www.linkedin.com/in/lucas-tcoelho/" target="_blank">
+                <img src="img/linkedin.png" alt="LinkedIn" class="icon">
+                </a>
+            </li>
+            <li>
+            <a href="https://github.com/LucasTouzoCoelho" target="_blank">
+                <img src="img/github.png" alt="GitHub" class="icon">
+            </a>
+            </li>
+            <li>
+            <a href="https://medium.com/@lucastouzopro" target="_blank">
+                <img src="img/medium.png" alt="Medium" class="icon">
+            </a>
+            <li>
+            <a href="https://wa.me/5519996161663" target="_blank">
+                <img src="img/whatsapp.png" alt="WhatsApp" class="icon">
+            </a>
+            </li>
+            <li>
+            <a href="mailto:lucastouzo@outlook.com" target="_blank">
+                <img src="img/email.png" alt="Email" class="icon">
+            </a>
+            </li>
+    </li>
+  </ul>
+    </section>
+</body>
 </html>
