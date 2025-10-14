@@ -220,7 +220,7 @@ a:hover{
 :root {
   --bg:#0B0731;
   --line:#ececf2;
-  --card:#231f39;
+  --card:#e4d6bd;
   --text:#f5f6fa;
   --muted:#c8c9d4;
   --accent:#9aa0ff;
@@ -231,6 +231,13 @@ a:hover{
   color: var(--text);
   font-family: Inter, system-ui, Arial, sans-serif;
   padding: 64px 0 96px; /* apenas espaçamento vertical */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
 }
 
 #background .timeline {
@@ -261,8 +268,8 @@ a:hover{
   padding:26px 32px;
   box-sizing:border-box;
 }
-.timeline-item.left { left:0; }
-.timeline-item.right { left:50%; }
+.timeline-item.left { left:50%; }
+.timeline-item.right { left:0; }
 
 .timeline-content {
   background:var(--card);
@@ -277,7 +284,7 @@ a:hover{
 }
 .timeline-content .company {
   margin:0 0 12px;
-  color:var(--muted);
+  color:#646262;
   font-size:.95rem;
 }
 
@@ -290,7 +297,7 @@ a:hover{
 .timeline-content p {
   margin:0;
   line-height:1.55;
-  color:#e7e7f0;
+  color:#444;
 }
 
 /* skills chips */
@@ -310,8 +317,8 @@ a:hover{
 
 /* marcador (logo + data) */
 .timeline-marker {
-  position:absolute;
-  top:26px;
+  position:relative;
+  top:40px;
   left:50%;
   transform:translate(-50%,-50%);
   display:flex;
@@ -320,7 +327,7 @@ a:hover{
   gap:8px;
 }
 .timeline-marker::before {
-  content:"";
+  content:none;
   width:22px;
   height:22px;
   background:var(--bg);
@@ -338,18 +345,55 @@ a:hover{
   border:1px solid rgba(0,0,0,.1);
   box-shadow:0 4px 10px rgba(0,0,0,.35);
 }
+
+/* (opcional) ajuste fino */
+.timeline-marker {
+  gap: 0;          /* não precisa de gap sem o ::before */
+}
 .timeline-marker .date {
   color:var(--muted);
   font-size:.9rem;
   white-space:nowrap;
 }
 
-/* setinhas nos cards */
-.timeline-item.left .timeline-content {
-  clip-path:polygon(0 0,100% 0,100% 100%,6% 100%,6% 55%,0 50%,6% 45%,6% 0);
+/* base do card */
+.timeline-content{
+  position: relative;
+  background: var(--card-bg, #efe1c9);
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 14px;
+  padding: 24px;
+  overflow: visible; /* permite a seta ficar para fora */
 }
-.timeline-item.right .timeline-content {
-  clip-path:polygon(0 0,94% 0,94% 45%,100% 50%,94% 55%,94% 100%,0 100%,0 0);
+
+/* SETA ESQUERDA */
+.timeline-item.left .timeline-content{ padding-left: 36px; } /* espaço pro texto */
+.timeline-item.left .timeline-content::after{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -12px;               /* faz a “seta” sair para fora do card */
+  width: 24px; height: 24px; /* um quadrado... */
+  transform: translateY(-50%) rotate(45deg); /* ...girado = losango/seta */
+  background: inherit;       /* mesma cor do card */
+  border-left: 1px solid rgba(0,0,0,.12);
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,.15); /* opcional */
+}
+
+/* SETA DIREITA */
+.timeline-item.right .timeline-content{ padding-right: 36px; }
+.timeline-item.right .timeline-content::after{
+  content: none;
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  width: 24px; height: 24px;
+  transform: translateY(-50%) rotate(45deg);
+  background: inherit;
+  border-right: 1px solid rgba(0,0,0,.12);
+  border-top: 1px solid rgba(0,0,0,.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
 }
 
 /* responsivo */
@@ -357,20 +401,3 @@ a:hover{
   .timeline::before {
     left:28px;
     transform:none;
-  }
-  .timeline-item,
-  .timeline-item.left,
-  .timeline-item.right {
-    left:0;
-    width:100%;
-    padding-left:72px;
-    padding-right:16px;
-  }
-  .timeline-marker {
-    left:28px;
-    transform:translate(-50%,-50%);
-  }
-  .timeline-item .timeline-content {
-    clip-path:none;
-  }
-}
